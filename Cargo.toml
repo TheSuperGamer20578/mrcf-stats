@@ -1,0 +1,16 @@
+[package]
+name = "mrcf-stats"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+chrono = "0.4.31"
+curseforge = { version = "0.3.1", optional = true }
+dotenv = "0.15.0"
+ferinth = { version = "2.9.2", optional = true }
+sqlx = { version = "0.7.2", features = ["mysql", "runtime-tokio", "chrono"] }
+tokio = { version = "1.33.0", features = ["rt-multi-thread", "macros"] }
+
+[features]
+default = ["modrinth", "curseforge"]
+modrinth = ["ferinth"]
